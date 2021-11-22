@@ -67,9 +67,17 @@ function App() {
       setResult("")
       setDisplay("")
     }
-    else if(buttonClicked === "%" && parseFloat(expression)) {
-      setExpression(calculate(parseFloat(expression) / 100).toString())
-      setDisplay(calculate(parseFloat(expression) / 100).toString())
+    else if(buttonClicked === "%") {
+      console.log(parseFloat(result))
+      if(result === "") {
+        setExpression(calculate(parseFloat(expression) / 100).toString())
+        setDisplay(calculate(parseFloat(expression) / 100).toString())
+      }
+      else {  
+        setExpression(calculate(parseFloat(result) / 100).toString())
+        setDisplay(calculate(parseFloat(result) / 100).toString())
+      }
+      setResult("")
     }
     else if(buttonClicked === "+" || buttonClicked === "-") {
       console.log("expression " + expression, "result" + result)
@@ -92,9 +100,15 @@ function App() {
       }
       setResult("")
     }
-    else if(buttonClicked === '\u221a' && parseFloat(expression)) {
-      setExpression(Math.sqrt(expression).toString())
-      setDisplay(Math.sqrt(expression).toString())
+    else if(buttonClicked === '\u221a') {
+      if(result ==="") {
+        setExpression(Math.sqrt(expression).toString())
+        setDisplay(Math.sqrt(expression).toString())
+      }
+      else {
+        setExpression(Math.sqrt(result).toString())
+        setDisplay(Math.sqrt(result).toString())
+      }
       setResult("")
     }
     else if(buttonClicked === "=") {

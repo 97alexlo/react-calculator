@@ -1,0 +1,12 @@
+.display {
+  padding-right: 15px;
+  width: 100%;
+  height: 45px;
+  color: #333;
+  text-align: right;
+  border-radius: 5px;
+  background-color: white;
+  line-height: 45px;
+  font-size: 1.4em;
+  vertical-align: middle;
+} 

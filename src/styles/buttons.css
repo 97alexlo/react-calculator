@@ -1,0 +1,121 @@
+.buttons {
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+    ". ms mc mr m-plus m-minus"
+    "ac seven eight nine percent square-root"
+    "c four five six multiply divide"
+    ". one two three add subtract"
+    ". zero decimal sign equal equal";
+    grid-gap: 5px;
+    margin-top: 10px;
+}
+
+button { 
+    font-size: 1.1em;
+}
+#ms {
+    grid-area: ms;
+}
+
+#mc {
+    grid-area: mc;
+}
+
+#mr {
+    grid-area: mr;
+}
+
+#m-minus {
+    grid-area: m-minus;
+}
+
+#m-plus {
+    grid-area: m-plus;
+}
+
+#ac {
+    grid-area: ac;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#percent {
+    grid-area: percent;
+}
+
+#square-root {
+    grid-area: square-root;
+}
+
+#c {
+    grid-area: c;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#multiply {
+    grid-area: multiply;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#add {
+    grid-area: add;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#decimal {
+    grid-area: decimal;
+}
+
+#sign {
+    grid-area: sign;
+}
+
+#equal {
+    grid-area: equal;
+}

@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
   const [expression, setExpression] = useState("")
   const [result, setResult] = useState("")
-  const [display, setDisplay] = useState("")
+  const [display, setDisplay] = useState("0")
   const [memoryStore, setMemoryStore] = useState("")
 
   function calculateExpression(buttonClicked) {
@@ -25,8 +25,14 @@ function App() {
 
   function handleButtonClicked(buttonClicked) {
     if(Number.isInteger(buttonClicked)) {
-      setResult(result + buttonClicked)
-      setDisplay(result + buttonClicked)
+      if(result === memoryStore) {
+        setResult(buttonClicked)
+        setDisplay(buttonClicked)
+      }
+      else {
+        setResult(result + buttonClicked)
+        setDisplay(result + buttonClicked)
+      }
     }
     else if(buttonClicked === ".") {
       if(!result.includes(".")) {
@@ -61,11 +67,11 @@ function App() {
     else if(buttonClicked === "AC") {
       setResult("")
       setExpression("")
-      setDisplay("")
+      setDisplay("0")
     }
     else if(buttonClicked === "C") {
       setResult("")
-      setDisplay("")
+      setDisplay("0")
     }
     else if(buttonClicked === "%") {
       console.log(parseFloat(result))
@@ -90,18 +96,27 @@ function App() {
       calculateExpression("/")
     }
     else if(buttonClicked === '+/-') {
-      if(result === "") {
+      console.log("expression " + expression, "result" + result)
+      if(result !== "" && expression !== "") {
+        console.log("first")
+        setResult(calculate(parseFloat(display) * -1).toString())
+        setDisplay(calculate(parseFloat(display) * -1).toString())
+      }
+      else if(result === "" && expression !== "") {
+        console.log("second")
         setExpression(calculate(parseFloat(expression) * -1).toString())
         setDisplay(calculate(parseFloat(expression) * -1).toString())
+        setResult("")
       }
       else {
+        console.log("third")
         setExpression(calculate(parseFloat(result) * -1).toString())
         setDisplay(calculate(parseFloat(result) * -1).toString())
+        setResult("")
       }
-      setResult("")
     }
     else if(buttonClicked === '\u221a') {
-      if(result ==="") {
+      if(result === "") {
         setExpression(Math.sqrt(expression).toString())
         setDisplay(Math.sqrt(expression).toString())
       }

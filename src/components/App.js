@@ -26,19 +26,17 @@ function App() {
   function handleButtonClicked(buttonClicked) {
     if(Number.isInteger(buttonClicked)) {
       if(result === memoryStore) {
-        setResult(buttonClicked)
-        setDisplay(buttonClicked)
+        setResult(buttonClicked.toString())
+        setDisplay(buttonClicked.toString())
       }
       else {
-        setResult(result + buttonClicked)
-        setDisplay(result + buttonClicked)
+        setResult(result + buttonClicked.toString())
+        setDisplay(result + buttonClicked.toString())
       }
     }
-    else if(buttonClicked === ".") {
-      if(!result.includes(".")) {
+    else if(buttonClicked === "." && !display.includes(".")) {
         setResult(result + buttonClicked)
         setDisplay(result + buttonClicked)
-      }
     }
     else if(buttonClicked === "MS") {
       setMemoryStore(display)
@@ -74,7 +72,6 @@ function App() {
       setDisplay("0")
     }
     else if(buttonClicked === "%") {
-      console.log(parseFloat(result))
       if(result === "") {
         setExpression(calculate(parseFloat(expression) / 100).toString())
         setDisplay(calculate(parseFloat(expression) / 100).toString())
@@ -98,18 +95,15 @@ function App() {
     else if(buttonClicked === '+/-') {
       console.log("expression " + expression, "result" + result)
       if(result !== "" && expression !== "") {
-        console.log("first")
         setResult(calculate(parseFloat(display) * -1).toString())
         setDisplay(calculate(parseFloat(display) * -1).toString())
       }
       else if(result === "" && expression !== "") {
-        console.log("second")
         setExpression(calculate(parseFloat(expression) * -1).toString())
         setDisplay(calculate(parseFloat(expression) * -1).toString())
         setResult("")
       }
       else {
-        console.log("third")
         setExpression(calculate(parseFloat(result) * -1).toString())
         setDisplay(calculate(parseFloat(result) * -1).toString())
         setResult("")
@@ -127,13 +121,11 @@ function App() {
       setResult("")
     }
     else if(buttonClicked === "=") {
-      console.log(expression + result)
       if(result !== "" && expression !== "") {
         setExpression(calculate(expression + result).toString())
         setDisplay(calculate(expression + result).toString())
         setResult("")
       }
-      console.log("expression " + expression, "result" + result)
     }
   }
 

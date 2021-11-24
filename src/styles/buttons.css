@@ -119,3 +119,27 @@ button {
 #equal {
     grid-area: equal;
 }
+
+.memory {
+    background-color: rgb(133, 184, 228);
+    color: white;
+    border: 1px solid white;
+}
+
+.number {
+    background-color: rgb(236, 123, 119);
+    color: white;
+    border: 1px solid white;
+}
+
+.clear {
+    background-color: rgb(119, 236, 187);
+    color: white;
+    border: 1px solid white;
+}
+
+.operator {
+    background-color: rgb(150, 119, 236);
+    color: white;
+    border: 1px solid white;
+}

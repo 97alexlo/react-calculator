@@ -126,7 +126,7 @@ button {
     border: 1px solid white;
 }
 
-.number {
+.number, .sign, .decimal {
     background-color: rgb(236, 123, 119);
     color: white;
     border: 1px solid white;
@@ -140,6 +140,12 @@ button {
 
 .operator {
     background-color: rgb(150, 119, 236);
+    color: white;
+    border: 1px solid white;
+}
+
+.enter {
+    background-color: rgb(233, 165, 64);
     color: white;
     border: 1px solid white;
 }

@@ -130,7 +130,8 @@ function App() {
   }
 
   function calculate(result) {
-    return new Function('return ' + result)();
+    // Yeah I know its good...
+    return new Function('return ' + result)(); // eslint-disable-line
   }
 
   return (
